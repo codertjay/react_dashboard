@@ -12,6 +12,7 @@ import {
     VerifiedUser,
     WorkOutline
 } from '@material-ui/icons'
+import {Link} from "react-router-dom";
 
 const Sidebar = () => {
     return (
@@ -21,9 +22,11 @@ const Sidebar = () => {
                     <div className="sidebarTitle">
                         Dashboard
                         <ul className="sidebarList">
-                            <li className="sidebarListItem">
-                                <LineStyle/>Home
-                            </li>
+                            <Link to={'/'} className={'link'}>
+                                <li className="sidebarListItem">
+                                    <LineStyle/>Home
+                                </li>
+                            </Link>
                             <li className="sidebarListItem">
                                 <Timeline/>Analytics
                             </li>
@@ -37,12 +40,16 @@ const Sidebar = () => {
                     <div className="sidebarTitle">
                         Quick Menu
                         <ul className="sidebarList">
-                            <li className="sidebarListItem">
-                                <VerifiedUser className='sidebarIcon'/>Users
-                            </li>
-                            <li className="sidebarListItem">
-                                <Timeline className='sidebarIcon'/>Products
-                            </li>
+                            <Link to={'/users'} className={'link'}>
+                                <li className="sidebarListItem">
+                                    <VerifiedUser className='sidebarIcon'/>Users
+                                </li>
+                            </Link>
+                            <Link to={'/products'} className={'link'}>
+                                <li className="sidebarListItem">
+                                    <Timeline className='sidebarIcon'/>Products
+                                </li>
+                            </Link>
                             <li className="sidebarListItem">
                                 <Money className='sidebarIcon'/>Transactions
                             </li>
